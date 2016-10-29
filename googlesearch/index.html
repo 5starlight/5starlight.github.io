@@ -10,13 +10,10 @@
 function addOpenSearch()
 {
   if (window.external && ("AddSearchProvider" in window.external)) {
-    // typeof weASP matches IE, wc matches Chrome, wnv matches Camino (bugs 430058/430067/430070) 
-    if (meth == "p" && ((window.chrome) || (typeof window.external.AddSearchProvider == "unknown") || (window.navigator.vendor == 'Camino'))) {
+    if ((window.chrome) || (typeof window.external.AddSearchProvider == "unknown") || (window.navigator.vendor == 'Camino')) {
       alert("This plugin uses POST which is not supported by all implementations of OpenSearch.");
     } else {
-      _gaq.push(['_trackEvent', 'Plugin', 'Install', pid]);
-      window.external.AddSearchProvider(
-        "/google.xml");
+      window.external.AddSearchProvider("/google.xml");
     }
   } else {
     alert("Your browser does not support OpenSearch search plugins.");
