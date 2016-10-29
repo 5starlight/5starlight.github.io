@@ -2,10 +2,10 @@
 <html xmlns="https://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>google seach</title>
+<title>google search</title>
 </head>
 <body>
-<link rel="search" type="application/opensearchdescription+xml" href="/google.xml" title="Google">
+<link rel="search" type="application/opensearchdescription+xml" href="google.xml" title="Google">
 <script type="text/javascript">
 function addOpenSearch()
 {
@@ -13,7 +13,7 @@ function addOpenSearch()
     if ((window.chrome) || (typeof window.external.AddSearchProvider == "unknown") || (window.navigator.vendor == 'Camino')) {
       alert("This plugin uses POST which is not supported by all implementations of OpenSearch.");
     } else {
-      window.external.AddSearchProvider("/google.xml");
+      window.external.AddSearchProvider("google.xml");
     }
   } else {
     alert("Your browser does not support OpenSearch search plugins.");
